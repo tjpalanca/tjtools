@@ -18,5 +18,5 @@ dnr <- function(preload = FALSE, reset = FALSE) {
 run <- function(dnr = TRUE, prod = FALSE) {
     if (dnr) dnr()
     options(golem.app.prod = prod)
-
+    run_app()
 }

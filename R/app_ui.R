@@ -1,15 +1,17 @@
 #' Application User Interface
 #'
 #' @param request Internal parameter for `{shiny}`. Do not remove!
-#' @import shiny
+#' @import shiny shinyWidgets
 #' @noRd
 app_ui <- function(request) {
   tagList(
-    # Leave this function for adding external resources
     golem_add_external_resources(),
-    # List the first level UI elements here
-    fluidPage(
-      h1("tjtools")
+    navbarPage(
+      title = "TJ Tools",
+      tabPanel(
+        title = "Table Tools",
+        mod_csv_to_gsheet_ui("csv_to_gsheet")
+      )
     )
   )
 }
