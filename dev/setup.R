@@ -19,27 +19,15 @@ usethis::use_code_of_conduct()
 usethis::use_lifecycle_badge("Experimental")
 usethis::use_news_md(open = FALSE)
 
-## Use git ----
+# Development Options
 usethis::use_git()
 
-## Init Testing Infrastructure ----
-## Create a template for tests
+# Testing infrastructure
 golem::use_recommended_tests()
 
-## Use Recommended Packages ----
+# Use recommended packages
 golem::use_recommended_deps()
 
-## Favicon ----
-# If you want to change the favicon (default is golem's one)
+# Favicon
 golem::remove_favicon()
-golem::use_favicon() # path = "path/to/ico". Can be an online file.
-
-## Add helper functions ----
-golem::use_utils_ui()
-golem::use_utils_server()
-
-# You're now set! ----
-
-# go to dev/02_dev.R
-rstudioapi::navigateToFile( "dev/02_dev.R" )
-
+golem::use_favicon("../tjblog/static/images/favicon.png")

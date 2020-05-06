@@ -1,10 +1,8 @@
-#' The application server-side
-#' 
-#' @param input,output,session Internal parameters for {shiny}. 
-#'     DO NOT REMOVE.
+#' Application Server Side Logic
+#'
+#' @param input,output,session Internal parameters for {shiny}.
 #' @import shiny
 #' @noRd
 app_server <- function( input, output, session ) {
-  # List the first level callModules here
 
 }
