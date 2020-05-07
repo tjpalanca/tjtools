@@ -1,5 +1,5 @@
 # tjtools 0.1.0
 
-# tjtools 0.0.0.9000
-
+* Initial Release
+* Add CSV to Google Sheet Functionality
 * Added a `NEWS.md` file to track changes to the package.

@@ -21,4 +21,5 @@ RoxygenNote: 7.1.0
 URL: https://github.com/tjpalanca/tjtools
 BugReports: https://github.com/tjpalanca/tjtools/issues
 Suggests: 
-    testthat
+    testthat,
+    sodium

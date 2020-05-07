@@ -6,7 +6,6 @@
 #' @param id,input,output,session Internal parameters for {shiny}.
 #' @noRd
 #' @importFrom shiny NS tagList
-#' @import googledrive
 mod_csv_to_gsheet_ui <- function(id){
   ns <- NS(id)
   tagList(
@@ -55,6 +54,8 @@ mod_csv_to_gsheet_ui <- function(id){
 #' @importFrom setter set_names
 #' @importFrom magrittr `%>%`
 #' @importFrom purrr map
+#' @importFrom googledrive drive_get drive_mv drive_auth drive_share
+#' @importFrom googlesheets4 gs4_auth gs4_create
 mod_csv_to_gsheet_server <- function(input, output, session) {
   ns <- session$ns
 
@@ -62,8 +63,10 @@ mod_csv_to_gsheet_server <- function(input, output, session) {
     eventReactive(
       input$csv_files, {
         # Authenticate credentials
-        gs4_auth(email = "troy.palanca@gmail.com")
-        drive_auth(email = "troy.palanca@gmail.com")
+        service_account.json <-
+          rawToChar(gargle:::secret_read("tjtools", "service-account.json"))
+        gs4_auth  (path = service_account.json)
+        drive_auth(path = service_account.json)
 
         # Create the combined sheet
         combined_sheet <-
@@ -75,8 +78,7 @@ mod_csv_to_gsheet_server <- function(input, output, session) {
             ) %>%
               set_names(input$csv_files$name)
           ) %>%
-          drive_get() %>%
-          drive_mv(path = as_id("1msj0de5AKSLhFvXirLaf2Kr4wb-5MzrO"))
+          drive_get()
 
         # Return the combined sheet
         combined_sheet

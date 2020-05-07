@@ -7,7 +7,7 @@ app_ui <- function(request) {
   tagList(
     golem_add_external_resources(),
     navbarPage(
-      title = "TJ Tools",
+      title = "TJTools",
       tabPanel(
         title = "Table Tools",
         mod_csv_to_gsheet_ui("csv_to_gsheet")
@@ -34,7 +34,7 @@ golem_add_external_resources <- function(){
     favicon(ext = "png"),
     bundle_resources(
       path = app_sys('app/www'),
-      app_title = 'tjtools'
+      app_title = 'TJTools'
     )
   )
 }
