@@ -1,6 +1,6 @@
 Package: tjtools
 Title: TJTools
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: person('TJ', 'Palanca', email = 'mail@tjpalanca.com', role = c('cre', 'aut'))
 Description: Random Tools built with Shiny
 License: MIT + file LICENSE
