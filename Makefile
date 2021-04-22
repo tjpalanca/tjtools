@@ -23,12 +23,6 @@ NODENAME=$(shell kubectl get pod $(HOSTNAME) -o=jsonpath={'.spec.nodeName'})
 C66_DEPLOY_HOOK=
 C66_DEPLOY_SERVICES=
 
-# Log in to docker hub
-dockerhub-login:
-	echo ${DOCKERHUB_PASSWORD} | docker login \
-		-u ${DOCKERHUB_USERNAME} \
-		--password-stdin
-
 # Pull the cache image
 pkg-build-pull:
 	-docker pull $(CCH_IMG)
