@@ -57,7 +57,6 @@ mod_csv_to_gsheet_ui <- function(id){
 #' @importFrom googledrive drive_get drive_mv drive_auth drive_share
 #' @importFrom googlesheets4 gs4_auth gs4_create
 mod_csv_to_gsheet_server <- function(input, output, session) {
-  ns <- session$ns
 
   combined_sheet <-
     eventReactive(
@@ -65,7 +64,7 @@ mod_csv_to_gsheet_server <- function(input, output, session) {
         # Authenticate credentials
         service_account.json <-
           rawToChar(gargle:::secret_read("tjtools", "service-account.json"))
-        gs4_auth  (path = service_account.json)
+        gs4_auth(path = service_account.json)
         drive_auth(path = service_account.json)
 
         # Create the combined sheet

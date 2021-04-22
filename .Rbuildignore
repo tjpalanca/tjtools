@@ -11,3 +11,7 @@ $run_dev.*
 ^CODE_OF_CONDUCT\.md$
 ^Dockerfile$
 ^\.github$
+^Makefile$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
