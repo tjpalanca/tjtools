@@ -62,12 +62,15 @@ mod_csv_to_gsheet_server <- function(input, output, session) {
     eventReactive(
       input$csv_files, {
         # Authenticate credentials
+        message("Reading Credentials")
         service_account.json <-
           rawToChar(gargle:::secret_read("tjtools", "service-account.json"))
+        message("Authorizing")
         gs4_auth(path = service_account.json)
         drive_auth(path = service_account.json)
 
         # Create the combined sheet
+        message("Creating Sheet")
         combined_sheet <-
           gs4_create(
             name = input$sheet_name,
@@ -88,6 +91,7 @@ mod_csv_to_gsheet_server <- function(input, output, session) {
     req(combined_sheet())
 
     # Grant write access to the combined sheet
+    message("Granting write access to sheet")
     drive_share(
       file = combined_sheet(),
       role = "writer",
@@ -96,6 +100,7 @@ mod_csv_to_gsheet_server <- function(input, output, session) {
     )
 
     # Return the result in the browser
+    message("Displaying link")
     div(
       class = "alert alert-success", role = "alert",
       "Success! You may access the sheet ",

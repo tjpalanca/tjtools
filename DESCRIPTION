@@ -15,13 +15,13 @@ Imports:
     purrr,
     googlesheets4,
     googledrive,
-    readr
+    readr,
+    sodium
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 URL: http://github.tjpalanca.com/tjtools, https://github.com/tjpalanca/tjtools
 BugReports: https://github.com/tjpalanca/tjtools/issues
 Suggests: 
-    testthat (>= 3.0.0),
-    sodium
+    testthat (>= 3.0.0)
 Config/testthat/edition: 3
