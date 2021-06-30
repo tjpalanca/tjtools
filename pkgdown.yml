@@ -2,7 +2,7 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-05-01T09:18Z
+last_built: 2021-06-30T07:43Z
 urls:
   reference: http://github.tjpalanca.com/tjtools/reference
   article: http://github.tjpalanca.com/tjtools/articles
