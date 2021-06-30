@@ -2,10 +2,10 @@
 APP=$(subst .,-,$(subst Package: ,,$(shell grep "Package: " DESCRIPTION)))
 VER=$(subst Version: ,,$(shell grep "Version: " DESCRIPTION))
 GIT=$(subst https://github.com/,,$(filter https://github.com/%,$(shell grep "URL: " DESCRIPTION)))
-REP=tjpalanca/apps
-LAT_IMG=$(REP):$(APP)-latest
-VER_IMG=$(REP):$(APP)-v$(VER)
-CCH_IMG=$(REP):$(APP)-cache
+REP=ghcr.io/tjpalanca/$(APP)
+LAT_IMG=$(REP):latest
+VER_IMG=$(REP):$(VER)
+CCH_IMG=$(REP):cache
 
 # Testing Environment
 BUILD_ARGS=
